@@ -22,6 +22,13 @@ jobs:
       - name: '☁️ checkout repository'
         uses: actions/checkout@v4
 
+      - name: Install Google Fonts
+        run: |
+          wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
+          unzip NotoSansCJKjp-hinted.zip -d NotoSansCJKjp
+          mv NotoSansCJKjp /usr/share/fonts/
+          fc-cache -fv
+
       - name: '✅ Run Cypress'
         if: ${{ !env.ACT }}
         uses: cypress-io/github-action@v6
