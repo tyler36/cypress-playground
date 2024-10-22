@@ -27,5 +27,5 @@
 Cypress.Commands.add('setPageForScreenshots', () => {
     cy.get('header').invoke('attr', 'style', 'position: relative')
     cy.get('.Contact_btn').invoke('attr', 'style', 'position: relative')
-    cy.get('.page_top').invoke('attr', 'style', 'display: none')
+    cy.get('.page_top').invoke('attr', 'style', 'display: none !important')
 })
