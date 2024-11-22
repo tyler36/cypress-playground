@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('setPageForScreenshots', () => {
+    cy.get('header').invoke('attr', 'style', 'position: relative')
+    cy.get('.Contact_btn').invoke('attr', 'style', 'position: relative')
+    cy.get('.page_top').invoke('attr', 'style', 'display: none !important')
+})
